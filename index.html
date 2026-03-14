@@ -9,24 +9,23 @@
 </head>
 <body>
 
-    <button id="playBtn">Play A Random Song</button>
+<select id="songSelect">
+    <option value="Music/1-01. Main Menu.mp3">Main Menu</option>
+</select>
 
-    <audio id="player"></audio>
+<button id="playBtn">Play Song</button>
 
-    <script>
-        const songs = [
-            "Music/1-01. Main Menu.mp3"
-        ];
-    document.getElementById("playBtn").addEventListener("click", () => {
-        const randomSong = songs[Math.floor(Math.random() * songs.length)];
-        const player = document.getElementById("player");
+<audio id="player"></audio>
 
-        player.src = randomSong;
+<script>
+    const player = document.getElementById("player");
+
+    document.getElementById("playBtn").addEventListener("click". () => {
+        const selectedSong = document.getElementById("songSelect").value;
+        player.src= selectedSong;
         player.play();
     });
-
-        
-    </script>
+</script>
     
 </body>
 </html>
